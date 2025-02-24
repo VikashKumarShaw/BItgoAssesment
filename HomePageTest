@@ -1,0 +1,45 @@
+package com.pack;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.testng.annotations.BeforeTest;
+import org.testng.Assert;
+import com.pack.PageObjectFramework.constants.ApplicationConstants;
+import com.pack.PageObjectFramework.xpaths.HomePageXpath;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
+import java.util.List;
+
+import org.junit.jupiter.api.Test;
+public class HomepageTest {
+
+    public WebDriver driver;
+
+    @BeforeTest
+	public WebDriver initializeBrowser() throws Exception {
+		driver = initializeBrowser();
+		driver.get(ApplicationConstants.WEBSITE_URL);
+		Assert.assertTrue(driver.getTitle().contains(ApplicationConstants.SITE_TITLE));
+        return driver;
+		
+	}
+
+    @Test()
+	public void validateHeading() {
+        String headingText = driver.findElement(By.xpath(HomePageXpath.HEADING_XPATH)).getText();
+        assertEquals(headingText, ApplicationConstants.HEADING);
+	}
+    
+    @Test()
+	public void printHash() {
+       for(int i = 1; i <= 25; i++){
+        List<WebElement> inValue = driver.findElements(By.xpath("//*[@id='transaction-box'][" + i + "]//div[@class='vin']"));
+        List<WebElement> outValue = driver.findElements(By.xpath("//*[@id='transaction-box'][" + i + "]//div[@class='vout']"));
+        if(inValue.size() == 1 && outValue.size() == 2){
+            System.out.println(driver.findElement(By.xpath("//*[@id='transaction-box'][" + i + "]//div[@class='header']//a")));
+        }
+       }
+	}
+}
