@@ -1,0 +1,12 @@
+package com.pack.PageObjectFramework.xpaths;
+
+public class HomePageXpath {
+	
+	public HomePageXpath() {
+		super();
+	
+	}
+	public static final String HEADING_XPATH = "//*[@class='transactions']/h3";
+	public static final String SEARCH_BUTTON = "nav-search-submit-button";
+
+}
