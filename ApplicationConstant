@@ -1,0 +1,14 @@
+package com.pack.PageObjectFramework.constants;
+
+public final class ApplicationConstants {
+
+	public static final String CHROME = "Chrome";
+	public static final String FIREFOX = "Firefox";
+	public static final String EDGE = "Edge";
+	public static final int GLOBAL_TMEOUT = 10;
+	public static final String WEBSITE_URL = "https://blockstream.info/block/000000000000000000076c036ff5119e5a5a74df77abf64203473364509f7732";
+	public static final String SITE_TITLE = "Block #680000: 000000000000000000076c036ff5119e5a5a74df77abf64203473364509f7732 · Bitcoin Explorer - Blockstream.info";
+	public static final String HEADING = "25 of 2875 Transactions";
+	
+	}
+
